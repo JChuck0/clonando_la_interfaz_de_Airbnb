@@ -31,13 +31,14 @@ Para **dispositivos grandes (>740px de ancho)** habrá una única barra en la qu
 ##### Prompt para sacar código del header
 Esta captura corresponde al header de Airbnb. Para hacer un clon de la página necesito que me generes el código de este componente, en el que se pueden distinguir dos zonas de elementos; div superior (Título y filtros) div inferior (Barra de búsqueda). El div superior se compone de tres espacios principales, el logo, los filtros (Todo, Alojamientos, Experiencias, Servicios) y el div de menú (Hazte anfitrión, y menú desplegable con tres líneas). Ambos divs están dispuestos en flex colum, uno arriba del otro. El Div superior se divide en otros tres divs, dispuestos en flex row, uno para el logo, otro para los cuatro filtros (dispuestos en flex row también) y otro para "Hazte anfitrión" y el menú de lineas (![alt text](image.png)) metido en un círculo gris. En el div inferior encontramos una barra con Destino, Fecha y Viajeros, los tres buttons que despliegan un dropdown. Destino se convierte en si mismo en un input text del que debemos guardar el texto y el deplegable muestra las principales ciudades, definidas por un logo, nombre de ciudad y un muy breve motivo de visita (Ejemplo: Granada: Por su impresionante arquitectura). Fechas despliega dos calendarios de meses consecutivos, en los que se puede seleccionar intervalo de fechas marcados en negro con la letra en blanco, y donde los días entre ambas fechas forman un puente marcado levemente en gris. Viajeros despliega un input de viajeros que despliega una cuenta acumulativa o sustractiva (Con minimo de 0) según el tipo de viajero (Adulto, Niño, Bebé y Mascota).
 
-#### Carrusel
 
-##### Prompt para sacar código del carrusel
+
+#### Carrusel y Prompt para sacar código del carrusel
+El carrusel se divide en dos elementos, un div con el título y una flecha para ir a la dirección de búsqueda dispuestos en justify content, y el propio carrusel de habitaciones. El carrusel, dispuesto en flex-colum está formado por una foto con un corazón incrustado en la esquina superior izquierda que ocupa la mayoría del espacio, y un texto con un título descriptivo como título, fechas de disponibilidad inmediata, tipo de anfitrión, gasto total de la estancia para las fechas propuestas, y las estrellas que tiene el sitio. El corazón de la foto permanece en black opacity-60 y un round white de 2px de ancho
+
 
 #### Footer
-
-##### Prompt para sacar código del footer
+El footer se divide en tres article uno principal con los títulos Asistencia, Cómo ser anfitrión y Airbnb, cada uno con sus enlaces a la información que ofrecen.
 
 
 
@@ -45,19 +46,36 @@ Esta captura corresponde al header de Airbnb. Para hacer un clon de la página n
 
 ### Catálogo
 
+
 #### Header Catálogo
+Para pantallas móviles, el header de catálogo comparte el mismo botón de búsqueda que Inicio, con las siguientes diferencias:
+    - El destino que hemos elegido queda fijo en la etiqueta de Destino. Al pulsar se nos abre el dropdown con la misma disposición vertical que para inicio.
+    - Abajo del botón aparecen etiquetas de los principales filtros de búsqueda para cada alojamiento
 
 #### Mapa
+Para dispositivos móviles el mapa es lo primero después del header, y en el momento de la navegación vertical queda detrás del grid de habitaciones mientras éstas suben. Al pulsar en él ocupará todo menos el header para facilitar la navegación, quedando el grid plegado con una flecha hacia arriba para volver a recuperarlo
+Para pantallas grandes el mapa queda fijado a la derecha de la web al desplazar el grid
 
 #### Grid de habitaciones
+Para dispositivos móviles las habitaciones se presentan de una en una. El espacio de presentación de cada habitación se divide en un carrusel de imagen grande, ocupando el 85% del espacio para cada habitación. El resto se divide en tres espacios. El primero es un div con un título para la habitación, en bold, y al lado en justify-content estarán las estrellas del sitio, dispuesto en (símbolo de estrella, número de estrellas con un decimal, y (número de votantes)). El segundo espacio se divide en tres p dispuestos en flex-colum, uno con una breve descripción del sitio, otro con el tipo de anfitrión y el último con la disponibilidad más inmediata en un intervalo de fechas. Por último, tenemos un último p con el precio total para el intervalo de fechas dado, con letras en bold y subrayadas. 
+Para pantallas grandes el grid de alojamientos se presenta de dos en dos con el mapa fijo para la navegación a la derecha de la pantalla
+
 
 
 
 ### Rooms
 
 #### Header rooms
-
+El header de rooms se divide en tres div, uno para el logo, otro para el menu de los tres dropdown (Destino, fecha, viajeros) y el último para los menú "Hazte anfitrión" y el menú de lineas.
 #### Grid de fotos
+Tenemos un article dividido en dos: div para el title del room, el botón de compartir y el corazón de guardad y otro para las fotos fotos. El primer div lo compone el título por un lado, y el botón de compartir y Guardar por otro, dispuestos en justify-content. Las fotos se dividen en dos posiciones, una primera foto en grande que ocupa el 50% del espacio reservado para las fotos, y un grid de 4 fotos que ocupa el otro 50%, separadas ambas por un margin de 2px. 
+
+Para móviles tenemos una pequeña barra superior dividida en dos zonas, una con una flecha para volver a Catálogo y otra con un botón de compartir y guardar dispuestos en justify-content. Fijo abajo tenemos un footer con el precio total para las fechas que hemos selecionado, y por defecto pondrá el intervalo que nos ofrece, siempre y cuando no hayamos seleccionado fechas. Las fotos se presentan en un carrusel con flechas para viajar entre ellas y una fracción mostrando en qué foto estamos con respecto al total de ellas. Al comenzar la navegación vertical el siguiente espacio se dividen en varios article; En el primero dividimos en tres, vemos el título descriptivo, un p con una pequeña descripción, y otro p para las estrellas y el número de evaluaciones. El siguiente article se divide en tres, separados por una línea. La primera división se divide a su vez es una foto de perfil y una zona para texto dispuestos en flex row, donde encontramos un título con el nombre del anfitrión y un texto con la experiencia del mismo, dispuestos en flex colum estos dos últimos. La segunda división se divide en tres article, con datos sobre el anfitrión y el sitio. La última es un p con líneas de texto presentadas, y un botón de "mostrar más" en gris que despliega el resto del texto.
+Siguiendo con la navegación en el siguiente article encontramos una lista descriptiva de 6 elementos con el título "¿Qué hay en este alojamiento?" Cada una con su símbolo y texto. Tras pulsar el botón de mostrar más se presentan el resto.
+En otro article vemos un mapa con la disposición de donde está la habitación
+El el penúltimo article encontramos un calendario donde marcamos el intervalo de fechas en el que nos quedaremos en el alojamiento, y que cambia autmáticamente el intervalo en el footer fijo y que recalcula el total en función del coste. 
+El último article tiene las estrellas y evaluaciones en bold.
+
 
 #### Tarjeta precio total, fechas y viajeros
 
